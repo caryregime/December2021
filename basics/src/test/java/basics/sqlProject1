@@ -1,0 +1,6 @@
+1. Get all records from the staff table
+
+SELECT * FROM STAFF
+
+2. 
+
