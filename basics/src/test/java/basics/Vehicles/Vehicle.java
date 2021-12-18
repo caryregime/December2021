@@ -1,4 +1,4 @@
-package basics;
+package basics.Vehicles;
 
 public abstract class Vehicle {
 	

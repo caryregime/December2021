@@ -1,4 +1,4 @@
-package basics;
+package basics.Vehicles;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -13,7 +13,9 @@ public class CarTests {
 	public void canBuildCar() {
 		String model = "Corvette";
 		
-		canBuildCar(model, new LargeEngine());
+		Car car = CarFactory.buildCarWithLargeEngine(model);
+
+		canStartCar(car);
 	}
 	
 	@Test
@@ -47,7 +49,9 @@ public class CarTests {
 	public void canBuildConvertibleCar() {
 		String model = "Miata";
 	
-		canBuildCar(model, new SmallEngine());
+		ConvertibleCar convertibleCar = CarFactory.buildConvertibleCar(model);
+
+		canStartCar(convertibleCar);
 	}
 	
 	@Test
@@ -66,8 +70,7 @@ public class CarTests {
 		assertTrue("the top should be lowered.", isTopDown);
 	}
 	
-	private void canBuildCar(String model, IEngine engine) {
-		Car car = new Car(model, engine);
+	private void canStartCar(Car car) {
 		car.Start();
 		
 		Assert.assertTrue(car != null);

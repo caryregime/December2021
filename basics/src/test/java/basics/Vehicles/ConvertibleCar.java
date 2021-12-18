@@ -1,4 +1,4 @@
-package basics;
+package basics.Vehicles;
 
 public class ConvertibleCar extends Car {
 
