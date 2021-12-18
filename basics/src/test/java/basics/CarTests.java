@@ -1,6 +1,7 @@
 package basics;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Assert;
@@ -47,6 +48,22 @@ public class CarTests {
 		String model = "Miata";
 	
 		canBuildCar(model, new SmallEngine());
+	}
+	
+	@Test
+	public void canLowerAndRaiseConvertibleTop() {
+		String model = "Miata";
+		boolean isTopDown = false;
+		
+		ConvertibleCar convertible = new ConvertibleCar(model, new SmallEngine());
+		isTopDown = convertible.isTopDown();
+		
+		assertFalse("the default position of top is up.", isTopDown);
+		
+		convertible.lowerTop();
+		isTopDown = convertible.isTopDown();
+
+		assertTrue("the top should be lowered.", isTopDown);
 	}
 	
 	private void canBuildCar(String model, IEngine engine) {
