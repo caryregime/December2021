@@ -1,6 +1,6 @@
 package basics;
 
-public class Car {
+public class Car extends Vehicle{
 	public LargeEngine engine;
 	public String model;
 
