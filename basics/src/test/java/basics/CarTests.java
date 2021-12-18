@@ -11,7 +11,7 @@ public class CarTests {
 	public void canBuildCar() {
 		String model = "Corvette";
 		
-		Car car = new Car(model);
+		Car car = new Car(model, new LargeEngine());
 		car.Start();
 		
 		Assert.assertTrue(car != null);
@@ -25,7 +25,7 @@ public class CarTests {
 	
 	@Test
 	public void canDriveCar() {
-		Car car = new Car("Corvette");
+		Car car = new Car("Corvette", new LargeEngine());
 		driveVehicle(car);
 	}
 	

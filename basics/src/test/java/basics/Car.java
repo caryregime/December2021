@@ -1,12 +1,12 @@
 package basics;
 
 public class Car extends Vehicle{
-	public LargeEngine engine;
+	public IEngine engine;
 	public String model;
 
-	public Car(String model) {
+	public Car(String model, IEngine engine) {
 		this.model = model;
-		this.engine = new LargeEngine();
+		this.engine = engine;
 	}
 	
 	public void Start() {
