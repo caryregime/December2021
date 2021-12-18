@@ -1,7 +1,6 @@
 package basics;
 
 public class Car {
-	private int odometer;
 	public LargeEngine engine;
 	public String model;
 
@@ -10,10 +9,6 @@ public class Car {
 		this.engine = new LargeEngine();
 	}
 	
-	int getOdometer() {
-		return odometer;
-	}
-
 	public void Start() {
 		this.engine.startEngine();		
 	}
