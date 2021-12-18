@@ -12,22 +12,19 @@ public class CarTests {
 	public void canBuildCar() {
 		String model = "Corvette";
 		
-		Car car = new Car(model, new LargeEngine());
-		car.Start();
-		
-		Assert.assertTrue(car != null);
+		canBuildCar(model, new LargeEngine());
 	}
 	
 	@Test
 	public void canDriveBicycle() {
 		Bicycle bike = new Bicycle();
-		driveVehicle(bike);
+		canDriveVehicle(bike);
 	}
 	
 	@Test
 	public void canDriveCar() {
 		Car car = new Car("Corvette", new LargeEngine());
-		driveVehicle(car);
+		canDriveVehicle(car);
 	}
 
 	@Test
@@ -45,7 +42,21 @@ public class CarTests {
 		assertTrue("cylinder counts should match as expected.", largeEngineCylinderCount == actualLargeEngineCylinderCount);
 	}
 	
-	private void driveVehicle(Vehicle vehicle) {
+	@Test
+	public void canBuildConvertibleCar() {
+		String model = "Miata";
+	
+		canBuildCar(model, new SmallEngine());
+	}
+	
+	private void canBuildCar(String model, IEngine engine) {
+		Car car = new Car(model, engine);
+		car.Start();
+		
+		Assert.assertTrue(car != null);
+	}
+	
+	private void canDriveVehicle(Vehicle vehicle) {
 		int distance = 1;
 		
 		int odometerBefore = vehicle.getOdometer();
